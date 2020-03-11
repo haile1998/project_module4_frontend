@@ -28,4 +28,7 @@ export class SongService {
     };
     return this.httpClient.put<any>(this.apiUrl + '/' + product.id, product);
   }
+  public deleteSong(id: number): Observable<any> {
+    return  this.httpClient.delete(this.apiUrl + '/' + id);
+  }
 }

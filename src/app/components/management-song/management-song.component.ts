@@ -15,5 +15,11 @@ export class ManagementSongComponent implements OnInit {
     this.songList = result.data;
   });
   }
-
+  deleteSong(i) {
+    const song = this.songList[i];
+    this.songService.deleteSong(song.id).subscribe(() => {
+      this.songList = this.songList.filter(t => t.id !== song.id);
+      console.log(song.id);
+    });
+  }
 }

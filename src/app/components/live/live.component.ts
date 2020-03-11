@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SongService} from '../../services/song.service';
 
 @Component({
   selector: 'app-live',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./live.component.scss']
 })
 export class LiveComponent implements OnInit {
+  songList: any[];
+  constructor(private songService: SongService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.songService.getList().subscribe( result => {
+      this.songList = result.data;
+    });
   }
-
 }

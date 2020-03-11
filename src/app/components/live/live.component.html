@@ -1,1 +1,35 @@
 <p>live works!</p>
+<table class="table">
+  <thead class="thead-dark">
+  </thead>
+  <tbody>
+  <tr *ngFor="let song of songList,index as i">
+    <th scope="row">{{i+1}}</th>
+    <td>
+      <img src="{{song.image}}">
+    </td>
+    <td>{{song.name}}</td>
+    <td>
+      <audio controls>
+        <source src="{{song.url}}" type="audio/mpeg">
+      </audio>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img style="width:100px;height: 100px" src="https://data.chiasenhac.com/data/cover/117/116181.jpg">
+    </td>
+    <td>Chân ái</td>
+    <td>
+      <audio controls>
+        <source src="C:\Users\admin\Desktop\Module4\Frontend\src\app\mp3\Chan Ai - Orange_ Khoi.mp3" type="audio/mpeg">
+      </audio>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/762098344&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </td>
+  </tr>
+  </tbody>
+</table>
